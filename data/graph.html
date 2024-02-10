@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+</head>
+<body>
+  <canvas id='pressureChart'></canvas>
+  <canvas id='temperatureChart'></canvas>
+  <canvas id='humidityChart'></canvas>
+  <script>
+  var ctx = document.getElementById('pressureChart').getContext('2d');
+  Chart.defaults.font.size = 24;
+  var pressureChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [%PRESSURE_LABELS%],
+      datasets: [{
+        label: 'Pressure',
+        data: [%PRESSURE_DATA%],
+        borderColor: 'rgba(0, 123, 255, 1)', // blue
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Pressure',
+        fontColor: 'rgba(0, 123, 255, 1)', // blue
+        fontSize: 24 // Set the font size to 24 pixels
+      }
+    }
+  });
+
+  ctx = document.getElementById('temperatureChart').getContext('2d');
+  var temperatureChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [%TEMPERATURE_LABELS%],
+      datasets: [{
+        label: 'Temperature',
+        data: [%TEMPERATURE_DATA%],
+        borderColor: 'rgba(40, 167, 69, 1)', // green
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Temperature',
+        fontColor: 'rgba(40, 167, 69, 1)', // green
+        fontSize: 24 // Set the font size to 24 pixels
+      }
+    }
+  });
+
+  ctx = document.getElementById('humidityChart').getContext('2d');
+  var humidityChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [%HUMIDITY_LABELS%],
+      datasets: [{
+        label: 'Humidity',
+        data: [%HUMIDITY_DATA%],
+        borderColor: 'rgba(220, 53, 69, 1)', // red
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Humidity',
+        fontColor: 'rgba(220, 53, 69, 1)', // red
+        fontSize: 24 // Set the font size to 24 pixels
+      }
+    }
+  });
+</script>
+</body>
+</html>

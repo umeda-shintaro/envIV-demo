@@ -1,0 +1,15 @@
+.pio
+.vscode/
+
+
+
+
+!.gitignore
+
+!/data/
+!/include/
+!/lib/
+!/src/
+!/test/
+
+!/platformio.ini
