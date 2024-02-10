@@ -198,5 +198,5 @@ void loop() {
     canvas.printf("湿度：%.1f％\n", humidity);
   }
   canvas.pushSprite(&M5.Lcd, 10, 15);  // 画面を指定座標に一括表示実行
-  delay();  // 取得間隔[msec]
+  delay(delayTime);  // 取得間隔[msec]
 }
